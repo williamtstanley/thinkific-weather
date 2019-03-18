@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## ENVIRONMENT VARIABLE
+You need to run this with access to the openweatherMap API KEY. `REACT_APP_APIKEY=<YOUR API KEY HERE> yarn start`
+
 ## Available Scripts
 
 In the project directory, you can run:
