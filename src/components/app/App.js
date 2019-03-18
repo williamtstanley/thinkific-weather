@@ -10,7 +10,7 @@ function App(props) {
   const [state, setState] = useState({ list: {}, city: {} });
   function fetchWeather(query) {
     const getUrl = (query, apiKey) =>
-      `http://api.openweathermap.org/data/2.5/forecast?units=metric&q=${query}&APPID=${apiKey}`;
+      `https://api.openweathermap.org/data/2.5/forecast?units=metric&q=${query}&APPID=${apiKey}`;
 
     axios
       .get(getUrl(query, apiKey))
