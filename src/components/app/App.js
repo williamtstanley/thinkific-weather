@@ -7,7 +7,7 @@ import './App.scss';
 const apiKey = 'ee15e5dc2b8ff43e6560d17e5a82b642';
 
 function App(props) {
-  const [state, setState] = useState({ list: [], city: {} });
+  const [state, setState] = useState({ list: {}, city: {} });
   function fetchWeather(query) {
     const getUrl = (query, apiKey) =>
       `http://api.openweathermap.org/data/2.5/forecast?units=metric&q=${query}&APPID=${apiKey}`;
@@ -28,7 +28,13 @@ function App(props) {
 
         setState({ city, list: dayMap });
       })
-      .catch(console.log);
+      .catch(e => {
+        setState({
+          list: {},
+          city: {},
+          error: 'Unable to find a match... please try a differenct query.',
+        });
+      });
   }
 
   function handleSubmit(e) {
@@ -58,6 +64,7 @@ function App(props) {
           </button>
         </div>
       </form>
+      <p className="search-form__error">{state.error}</p>
       <Results city={state.city} list={state.list} />
     </div>
   );

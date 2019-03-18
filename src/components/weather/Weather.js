@@ -26,11 +26,10 @@ const WeatherDetails = props => (
 
 export const Results = props => (
   <section>
-    <h1 className="weather-city">{props.city.name}</h1>
     <ul className="weather-list">
       {Object.entries(props.list).map(([key, items]) => (
         <li key={`${props.city.name}-${key}`} className="weather-daily">
-          <h2>{key}</h2>
+          <h2>{format(new Date(items[0].dt_txt), 'MMM, Do')}</h2>
           <section className="weather-daily__details">
             {items.map(item => (
               <WeatherDetails key={item.dt_txt} {...item} />
