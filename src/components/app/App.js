@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Results } from '../weather';
 import './App.scss';
 
-const apiKey = 'ee15e5dc2b8ff43e6560d17e5a82b642';
+const apiKey = process.env.REACT_APP_APIKEY;
 
 function App(props) {
   const [state, setState] = useState({ list: {}, city: {} });
