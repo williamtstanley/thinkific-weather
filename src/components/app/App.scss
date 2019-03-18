@@ -20,7 +20,7 @@
 
 .search-input-container {
   display: flex;
-  max-width: 300px;
+  min-width: 300px;
   border: 1px solid #706c61;
   border-radius: 10px;
   overflow: hidden;
