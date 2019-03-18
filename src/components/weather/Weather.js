@@ -29,7 +29,7 @@ export const Results = props => (
     <ul className="weather-list">
       {Object.entries(props.list).map(([key, items]) => (
         <li key={`${props.city.name}-${key}`} className="weather-daily">
-          <h2>{format(new Date(items[0].dt_txt), 'MMM, Do')}</h2>
+          <h2>{format(new Date(items[0].dt_txt), 'dddd, MMM Do')}</h2>
           <section className="weather-daily__details">
             {items.map(item => (
               <WeatherDetails key={item.dt_txt} {...item} />
